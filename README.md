@@ -1,7 +1,9 @@
 # Flutter Objectbox
 
 1. Membuat Model Database
-   
+
+   Buat folder Model di dalam folder lib, kemudian buat model database untuk class User
+
    ---
        import 'package:objectbox/objectbox.dart';
   
@@ -23,6 +25,8 @@
    
 3. Menambahkan Dependencies
 
+   Dependencies dapat ditambahkan di file pubxpec.yaml, dependencies yang dibutuhkan antara lain sebagai berikut
+
    ---
          dependencies:
            flutter:
@@ -40,6 +44,34 @@
            build_runner: ^2.3.0
            objectbox_generator: ^4.1.0
    ---
+
+   - Dependencies
+     
+   | Package               | Kegunaan                                               |
+   |-----------------------|--------------------------------------------------------|
+   | objectbox             | Database lokal yang akan digunakan                     |
+   | objectbox_flutter_libs| Binding dan dukungan platform ObjectBox untuk Flutter agar bisa digunakan pada berbagai platform (Android / IOS)  |
+   | path_provider         | digunakan untuk mengakses direktori pada perangkat jika diperlukan       |
+   | faker                 | Generate data palsu (dummy data) untuk testing         |
+
+   - Dev Dependencies
+   
+   | Package               | Kegunaan                                               |
+   |-----------------------|--------------------------------------------------------|
+   | build_runner          | Tool untuk generate code otomatis dan dapat digunakan untuk ObjectBox       |
+   | objectbox_generator   | Plugin untuk build_runner yang digunakan untuk menghasilkan file database ObjectBox berdasarkan model database         |
+
+
+   Setelah menambahkan dependencies pada pubxpec.yaml, jalankan command berikut pada terminal
+
+   ---
+
+         flutter pub get
+         flutter pub run build_runner build
+
+   ---
+
+   
 5. Aplikasi
 
    ---
