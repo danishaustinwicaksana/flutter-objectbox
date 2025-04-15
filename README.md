@@ -8,7 +8,6 @@
        import 'package:objectbox/objectbox.dart';
   
         @Entity()
-        // @Sync()
         class User {
           int id;
           String name;
@@ -196,19 +195,6 @@
          
            static Future<ObjectBox> init() async {
              final store = await openStore();
-         
-             // if (Sync.isAvailable()) {
-             //   // jika menggunakan physical device bisa pake IP dari server
-             //   // final ipSyncServer = '{ip dari server / komputernya}'
-             //   final ipSyncServer = Platform.isAndroid ? '10.0.2.2' : '127.0.0.1';
-             //   final syncClient = Sync.client(
-             //     store,
-             //     'ws://$ipSyncServer:9999',
-             //     SyncCredentials.none(),
-             //   );
-             //   syncClient.connectionEvents.listen(print);
-             //   syncClient.start();
-             // }
          
              return ObjectBox._init(store);
            }
